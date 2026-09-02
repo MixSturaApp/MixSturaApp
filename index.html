@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ73ZTBTGZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TJ73ZTBTGZ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MixStūra — Video Downloader &amp; Stream Muxer</title>
+  <meta name="description"
+    content="MixStūra is a browser extension for video downloading and stream muxing, currently available in open beta.">
+  <meta name="theme-color" content="hsl(110, 12%, 4%)">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MixStūra — Video Downloader &amp; Stream Muxer">
+  <meta property="og:description"
+    content="MixStūra is an independent browser extension for video downloading and stream muxing, currently available in open beta.">
+  <meta property="og:url" content="https://mixsturaapp.github.io/MixSturaApp/">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MixStūra — Video Downloader &amp; Stream Muxer">
+  <meta name="twitter:description"
+    content="MixStūra is an independent browser extension for video downloading and stream muxing, currently available in open beta.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       Header & Sticky Navigation
+       ========================================================================== -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="#hero" class="nav__logo" aria-label="MixStūra Home">
+          <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="hsl(110, 12%, 8%)" />
+            <rect x="1" y="1" width="62" height="62" rx="15" stroke="hsl(110, 75%, 60%)" stroke-width="1.5"
+              stroke-opacity="0.3" />
+            <path d="M16 22H28C34 22 38 26 42 32H48" stroke="hsl(110, 75%, 60%)" stroke-width="3.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 42H28C34 42 38 38 42 32H48" stroke="hsl(110, 100%, 85%)" stroke-width="3.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="42" cy="32" r="4.5" fill="hsl(110, 75%, 60%)" />
+            <path d="M46 27L52 32L46 37" stroke="hsl(110, 75%, 60%)" stroke-width="3.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>MixStūra</span>
+        </a>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="#features" class="nav__link">Features</a></li>
+            <li><a href="#workflow" class="nav__link">How it works</a></li>
+            <li><a href="#beta" class="nav__link">Beta</a></li>
+            <li><a href="#faq" class="nav__link">FAQ</a></li>
+          </ul>
+
+          <div class="nav__actions-mobile">
+            <a href="#browsers" class="btn btn--primary btn--block nav__cta" data-link="download">Get MixStūra</a>
+            <a href="https://github.com/MixSturaApp/MixSturaApp/issues" class="btn btn--secondary btn--block"
+              data-link="bug" target="_blank" rel="noopener noreferrer">Report a Bug</a>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Actions -->
+        <div class="nav__actions-desktop">
+          <a href="#browsers" class="btn btn--primary btn--sm nav__cta" data-link="download">Get MixStūra</a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
+          aria-label="Toggle navigation menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Backdrop -->
+  <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       Main Content
+       ========================================================================== -->
+  <main>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero__container">
+
+        <!-- Hero Text Content -->
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="badge badge--beta badge--dot">Open Beta</span>
+          </div>
+
+          <h1 class="hero__title">MixStūra</h1>
+          <p class="hero__subtitle">Video Downloader &amp; Stream Muxer</p>
+
+          <p class="hero__desc">
+            An independent browser extension designed for detecting supported media streams and downloading/muxing them
+            through its supported workflow.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#browsers" class="btn btn--primary" data-link="download">Get MixStūra</a>
+            <a href="https://github.com/MixSturaApp/MixSturaApp/issues" class="btn btn--secondary" data-link="bug"
+              target="_blank" rel="noopener noreferrer">Report a Bug</a>
+          </div>
+
+          <div class="hero__note">
+            <svg class="hero__note-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd" />
+            </svg>
+            <span>Currently in open beta testing. Feedback and bug reports are welcome.</span>
+          </div>
+        </div>
+
+        <!-- Hero Visual Mockup (Static UI Representation) -->
+        <div class="hero__mockup-wrapper">
+          <div class="mockup-window" aria-label="MixStūra browser extension interface preview">
+
+            <!-- Window Titlebar -->
+            <div class="mockup-window__header">
+              <div class="mockup-window__controls">
+                <span class="mockup-window__dot"></span>
+                <span class="mockup-window__dot"></span>
+                <span class="mockup-window__dot"></span>
+              </div>
+              <div class="mockup-window__title">
+                <span>MixStūra</span>
+                <span class="mockup-window__version">Open Beta</span>
+              </div>
+              <div class="badge badge--muted">Active Tab</div>
+            </div>
+
+            <!-- Window Content -->
+            <div class="mockup-window__body">
+
+              <!-- Current Page Stream Bar -->
+              <div class="mockup-bar">
+                <span class="mockup-bar__label">Detected Source</span>
+                <span class="mockup-bar__value">example.com/media/stream-source</span>
+              </div>
+
+              <!-- Stream List -->
+              <div class="mockup-section-title">
+                <span>Available Streams</span>
+                <span class="mockup-section-count">3 detected</span>
+              </div>
+
+              <div class="mockup-stream-list">
+                <!-- Stream 1 (Selected / Muxing) -->
+                <div class="mockup-stream-item is-selected">
+                  <div class="mockup-stream-info">
+                    <span class="mockup-quality-tag">1080p</span>
+                    <div class="mockup-stream-meta">
+                      <span class="mockup-stream-type">Video + Audio</span>
+                      <span class="mockup-stream-codecs">AVC1 / AAC &bull; MP4</span>
+                    </div>
+                  </div>
+                  <span class="mockup-status-badge mockup-status-badge--muxing">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                    </svg>
+                    Muxing
+                  </span>
+                </div>
+
+                <!-- Stream 2 (Ready) -->
+                <div class="mockup-stream-item">
+                  <div class="mockup-stream-info">
+                    <span class="mockup-quality-tag">720p</span>
+                    <div class="mockup-stream-meta">
+                      <span class="mockup-stream-type">Video + Audio</span>
+                      <span class="mockup-stream-codecs">AVC1 / AAC &bull; MP4</span>
+                    </div>
+                  </div>
+                  <span class="mockup-status-badge mockup-status-badge--ready">Ready</span>
+                </div>
+
+                <!-- Stream 3 (Ready) -->
+                <div class="mockup-stream-item">
+                  <div class="mockup-stream-info">
+                    <span class="mockup-quality-tag">480p</span>
+                    <div class="mockup-stream-meta">
+                      <span class="mockup-stream-type">Video + Audio</span>
+                      <span class="mockup-stream-codecs">AVC1 / AAC &bull; MP4</span>
+                    </div>
+                  </div>
+                  <span class="mockup-status-badge mockup-status-badge--ready">Ready</span>
+                </div>
+              </div>
+
+              <!-- Processing Progress -->
+              <div class="mockup-progress-box">
+                <div class="mockup-progress-header">
+                  <span class="mockup-progress-label">Stream Muxing Pipeline</span>
+                  <span class="mockup-progress-val">78%</span>
+                </div>
+                <div class="mockup-progress-track">
+                  <div class="mockup-progress-fill"></div>
+                </div>
+              </div>
+
+              <!-- Action Bar -->
+              <div class="mockup-action-bar">
+                <div class="mockup-btn mockup-btn--primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  Processing Output
+                </div>
+                <div class="mockup-btn mockup-btn--secondary">Settings</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Features Section -->
+    <section id="features" class="section">
+      <div class="container">
+
+        <header class="section__header">
+          <span class="section__eyebrow">Capabilities</span>
+          <h2 class="section__title">Designed for Stream Processing</h2>
+          <p class="section__subtitle">Core functionality built directly into a lightweight browser extension
+            architecture.</p>
+        </header>
+
+        <div class="features__grid">
+
+          <!-- Feature 1: Stream Detection -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Stream Detection</h3>
+            <p class="feature-card__desc">Detect supported media streams available on the active browser tab as network
+              requests occur.</p>
+          </div>
+
+          <!-- Feature 2: Quality Selection -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h10"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Quality Selection</h3>
+            <p class="feature-card__desc">Choose from available stream qualities and resolutions when provided by the
+              underlying source.</p>
+          </div>
+
+          <!-- Feature 3: Download Manager -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Download Manager</h3>
+            <p class="feature-card__desc">Track active download tasks, monitor current progress, and view processing
+              states in real time.</p>
+          </div>
+
+          <!-- Feature 4: Stream Muxing -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3">
+                </path>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Stream Muxing</h3>
+            <p class="feature-card__desc">Combine compatible media streams into a final unified media file through the
+              supported processing pipeline.</p>
+          </div>
+
+          <!-- Feature 5: Browser Extension -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Browser Extension</h3>
+            <p class="feature-card__desc">Designed to work seamlessly inside your browser rather than requiring a
+              separate standalone application.</p>
+          </div>
+
+          <!-- Feature 6: Open Development -->
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Open Development</h3>
+            <p class="feature-card__desc">The project is currently undergoing open beta testing, actively welcoming
+              community feedback and suggestions.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. How It Works Section -->
+    <section id="workflow" class="section">
+      <div class="container">
+
+        <header class="section__header">
+          <span class="section__eyebrow">Workflow</span>
+          <h2 class="section__title">How It Works</h2>
+          <p class="section__subtitle">A straightforward four-step process from stream identification to output file.
+          </p>
+        </header>
+
+        <div class="workflow__grid">
+
+          <!-- Step 1 -->
+          <div class="workflow-card">
+            <span class="workflow-card__step">01 — Detect</span>
+            <h3 class="workflow-card__title">Detect</h3>
+            <p class="workflow-card__desc">Find supported media streams automatically as you browse content on the
+              active web page.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="workflow-card">
+            <span class="workflow-card__step">02 — Select</span>
+            <h3 class="workflow-card__title">Select</h3>
+            <p class="workflow-card__desc">Choose the preferred stream format, resolution, and audio track from
+              available detected sources.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="workflow-card">
+            <span class="workflow-card__step">03 — Download</span>
+            <h3 class="workflow-card__title">Download</h3>
+            <p class="workflow-card__desc">Start a download and track its progress directly in the extension.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="workflow-card">
+            <span class="workflow-card__step">04 — Mux</span>
+            <h3 class="workflow-card__title">Mux</h3>
+            <p class="workflow-card__desc">Combine compatible streams into the final media container for seamless local
+              playback.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Open Beta Section -->
+    <section id="beta" class="section">
+      <div class="container">
+
+        <div class="beta__card">
+          <div class="beta__badge-wrapper">
+            <span class="badge badge--beta">Public Testing</span>
+          </div>
+
+          <h2 class="beta__title">MixStūra is in open beta</h2>
+
+          <p class="beta__desc">
+            MixStūra is an independently developed project currently in open beta. Some features and behaviors may
+            change as development continues. If something does not work as expected, reporting it helps shape the
+            product.
+          </p>
+
+          <div class="beta__actions">
+            <a href="https://github.com/MixSturaApp/MixSturaApp/issues" class="btn btn--primary" data-link="bug"
+              target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              Report a Bug
+            </a>
+
+            <a href="https://github.com/MixSturaApp/MixSturaApp/discussions" class="btn btn--secondary"
+              data-link="feedback" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              Share Feedback
+            </a>
+
+            <a href="https://github.com/MixSturaApp/MixSturaApp/discussions/categories/ideas" class="btn btn--secondary"
+              data-link="ideas" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z">
+                </path>
+              </svg>
+              Suggest an Idea
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Browser Support Section -->
+    <section id="browsers" class="section">
+      <div class="container">
+
+        <header class="section__header">
+          <span class="section__eyebrow">Compatibility</span>
+          <h2 class="section__title">Browser Support</h2>
+          <p class="section__subtitle">Targeted browser platforms supported during the beta testing phase.</p>
+        </header>
+
+        <div class="browsers__grid">
+
+          <!-- Chrome Card -->
+          <div class="browser-card">
+            <div class="browser-card__header">
+              <div class="browser-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="browser-card__title">Google Chrome</h3>
+                <p class="browser-card__meta">Manifest V3 compatible</p>
+              </div>
+            </div>
+
+            <div class="browser-card__status">
+              <span class="badge badge--beta">Beta Build</span>
+              <a href="#beta" class="btn btn--outline btn--sm" data-link="download-chrome">Beta Available Soon</a>
+            </div>
+          </div>
+
+          <!-- Firefox Card -->
+          <div class="browser-card">
+            <div class="browser-card__header">
+              <div class="browser-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path
+                    d="M12 2a10 10 0 0 1 7.07 17.07A10 10 0 0 0 12 6a6 6 0 0 0-6 6c0 1.5.55 2.87 1.46 3.93A10 10 0 0 1 12 2z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="browser-card__title">Mozilla Firefox</h3>
+                <p class="browser-card__meta">Gecko / WebExtension build</p>
+              </div>
+            </div>
+
+            <div class="browser-card__status">
+              <span class="badge badge--beta">Beta Build</span>
+              <a href="#beta" class="btn btn--outline btn--sm" data-link="download-firefox">Beta Available Soon</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Feedback & Community Section -->
+    <section id="feedback" class="section">
+      <div class="container">
+
+        <header class="section__header">
+          <span class="section__eyebrow">Community &amp; Support</span>
+          <h2 class="section__title">Get in Touch</h2>
+          <p class="section__subtitle">Direct channels for reporting issues, contributing ideas, and asking questions.
+          </p>
+        </header>
+
+        <div class="feedback__grid">
+
+          <!-- Card 1: Issues -->
+          <div class="feedback-card">
+            <div class="feedback-card__header">
+              <span class="feedback-card__emoji" aria-hidden="true">🐛</span>
+              <h3 class="feedback-card__title">Report a Bug</h3>
+            </div>
+            <p class="feedback-card__desc">
+              Found a reproducible issue, stream error, or broken functionality? Submit a detailed bug report on GitHub
+              Issues.
+            </p>
+            <div class="feedback-card__action">
+              <a href="https://github.com/MixSturaApp/MixSturaApp/issues" class="btn btn--secondary btn--block btn--sm"
+                data-link="bug" target="_blank" rel="noopener noreferrer">
+                Open GitHub Issues
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Ideas -->
+          <div class="feedback-card">
+            <div class="feedback-card__header">
+              <span class="feedback-card__emoji" aria-hidden="true">💡</span>
+              <h3 class="feedback-card__title">Ideas &amp; Suggestions</h3>
+            </div>
+            <p class="feedback-card__desc">
+              Have suggestions for new features, workflow enhancements, or usability improvements? Share your thoughts
+              in Discussions.
+            </p>
+            <div class="feedback-card__action">
+              <a href="https://github.com/MixSturaApp/MixSturaApp/discussions/categories/ideas"
+                class="btn btn--secondary btn--block btn--sm" data-link="ideas" target="_blank"
+                rel="noopener noreferrer">
+                Propose an Idea
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Questions -->
+          <div class="feedback-card">
+            <div class="feedback-card__header">
+              <span class="feedback-card__emoji" aria-hidden="true">💬</span>
+              <h3 class="feedback-card__title">Questions &amp; Help</h3>
+            </div>
+            <p class="feedback-card__desc">
+              Need assistance with setup or have general questions about how the beta operates? Join the community
+              discussion.
+            </p>
+            <div class="feedback-card__action">
+              <a href="https://github.com/MixSturaApp/MixSturaApp/discussions"
+                class="btn btn--secondary btn--block btn--sm" data-link="feedback" target="_blank"
+                rel="noopener noreferrer">
+                Join Discussions
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+
+        <header class="section__header">
+          <span class="section__eyebrow">FAQ</span>
+          <h2 class="section__title">Frequently Asked Questions</h2>
+          <p class="section__subtitle">Common questions regarding the MixStūra project and the open beta.</p>
+        </header>
+
+        <div class="faq__list">
+
+          <!-- Q1 -->
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span>What is MixStūra?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq__content">
+              <p>MixStūra is an independently developed browser extension designed for detecting supported media streams
+                and downloading/muxing them into standard media containers through its built-in processing pipeline.</p>
+            </div>
+          </details>
+
+          <!-- Q2 -->
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span>Is MixStūra free?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq__content">
+              <p>During the current open beta phase, MixStūra is free for all beta testers to use and evaluate.</p>
+            </div>
+          </details>
+
+          <!-- Q3 -->
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span>Is MixStūra still in development?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq__content">
+              <p>Yes. The extension is actively undergoing open beta testing. Some features and UI elements are being
+                refined based on user reports and testing results.</p>
+            </div>
+          </details>
+
+          <!-- Q4 -->
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span>Which browsers are supported?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq__content">
+              <p>MixStūra is currently targeted for Google Chrome and Mozilla Firefox, subject to active beta builds and
+                platform compatibility.</p>
+            </div>
+          </details>
+
+          <!-- Q5 -->
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span>Where can I report a bug?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq__content">
+              <p>Bug reports can be submitted directly on the official <a
+                  href="https://github.com/MixSturaApp/MixSturaApp/issues" target="_blank"
+                  rel="noopener noreferrer">GitHub Issues</a> tracker. Please include reproducible steps and browser
+                details.</p>
+            </div>
+          </details>
+
+          <!-- Q6 -->
+          <details class="faq__item">
+            <summary class="faq__summary">
+              <span>Where can I suggest a feature?</span>
+              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq__content">
+              <p>Feature suggestions and improvements are discussed on <a
+                  href="https://github.com/MixSturaApp/MixSturaApp/discussions/categories/ideas" target="_blank"
+                  rel="noopener noreferrer">GitHub Discussions (Ideas category)</a>.</p>
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg class="nav__logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <rect width="64" height="64" rx="16" fill="hsl(110, 12%, 8%)" />
+              <rect x="1" y="1" width="62" height="62" rx="15" stroke="hsl(110, 75%, 60%)" stroke-width="1.5"
+                stroke-opacity="0.3" />
+              <path d="M16 22H28C34 22 38 26 42 32H48" stroke="hsl(110, 75%, 60%)" stroke-width="3.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M16 42H28C34 42 38 38 42 32H48" stroke="hsl(110, 100%, 85%)" stroke-width="3.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="42" cy="32" r="4.5" fill="hsl(110, 75%, 60%)" />
+              <path d="M46 27L52 32L46 37" stroke="hsl(110, 75%, 60%)" stroke-width="3.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <span>MixStūra</span>
+          </div>
+          <p class="footer__subtitle">Video Downloader &amp; Stream Muxer</p>
+        </div>
+
+        <ul class="footer__nav" aria-label="Footer Navigation">
+          <li><a href="https://github.com/MixSturaApp/MixSturaApp" class="footer__link" data-link="github"
+              target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://github.com/MixSturaApp/MixSturaApp/issues" class="footer__link" data-link="bug"
+              target="_blank" rel="noopener noreferrer">Report a Bug</a></li>
+          <li><a href="https://github.com/MixSturaApp/MixSturaApp/discussions" class="footer__link" data-link="feedback"
+              target="_blank" rel="noopener noreferrer">Discussions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2026 MixStūra. All rights reserved.</div>
+        <div class="footer__meta">Open Beta &bull; Independent Project</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
