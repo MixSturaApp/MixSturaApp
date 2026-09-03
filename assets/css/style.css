@@ -9,38 +9,53 @@
 :root {
   /*========== Colors ==========*/
   /* Color mode HSL */
-  --hue: 110;
+  --hue: 142;
 
-  --first-color: hsl(var(--hue), 75%, 60%);
+  --first-color: hsl(var(--hue), 76%, 50%);
+  --first-color-alt: hsl(var(--hue), 76%, 42%);
+  --first-color-light: hsla(var(--hue), 76%, 50%, 0.12);
+  --first-color-glow: hsla(var(--hue), 76%, 50%, 0.28);
+  --first-color-subtle: hsla(var(--hue), 76%, 50%, 0.05);
+
+  /* Multi-stream brand identity colors */
+  --stream-blue: hsl(210, 100%, 56%);
+  --stream-purple: hsl(276, 88%, 60%);
+  --stream-orange: hsl(28, 98%, 52%);
+  --stream-green: hsl(var(--hue), 76%, 50%);
 
   --gradient-color:
     linear-gradient(
       90deg,
-      hsl(var(--hue), 75%, 60%) 0%,
-      hsl(var(--hue), 100%, 85%) 40%,
-      hsl(var(--hue), 100%, 85%) 60%,
-      hsl(var(--hue), 75%, 60%) 100%
+      hsl(var(--hue), 76%, 50%) 0%,
+      hsl(160, 85%, 68%) 40%,
+      hsl(160, 85%, 68%) 60%,
+      hsl(var(--hue), 76%, 50%) 100%
     );
 
-  --white-color: hsl(var(--hue), 24%, 98%);
-  --black-color: hsl(var(--hue), 12%, 8%);
-  --text-color: hsl(var(--hue), 4%, 70%);
-  --body-color: hsl(var(--hue), 12%, 4%);
-  --container-color: hsl(var(--hue), 8%, 10%);
-  --border-color: hsl(var(--hue), 8%, 20%);
+  --gradient-brand:
+    linear-gradient(
+      135deg,
+      hsl(210, 100%, 56%) 0%,
+      hsl(276, 88%, 60%) 35%,
+      hsl(28, 98%, 52%) 70%,
+      hsl(var(--hue), 76%, 50%) 100%
+    );
+
+  --white-color: hsl(210, 20%, 98%);
+  --black-color: hsl(220, 20%, 6%);
+  --text-color: hsl(215, 12%, 72%);
+  --text-color-light: hsl(215, 18%, 88%);
+  --body-color: hsl(220, 20%, 5%);
+  --container-color: hsl(220, 16%, 9%);
+  --border-color: hsl(220, 12%, 18%);
 
   /* Semantic & Derived Color Tokens */
-  --first-color-alt: hsl(var(--hue), 75%, 50%);
-  --first-color-light: hsla(var(--hue), 75%, 60%, 0.12);
-  --first-color-glow: hsla(var(--hue), 75%, 60%, 0.25);
-  --first-color-subtle: hsla(var(--hue), 75%, 60%, 0.06);
-  --text-color-light: hsl(var(--hue), 4%, 85%);
-  --muted-color: hsl(var(--hue), 4%, 52%);
-  --surface-hover-color: hsl(var(--hue), 8%, 13%);
-  --surface-active-color: hsl(var(--hue), 8%, 16%);
+  --muted-color: hsl(215, 10%, 52%);
+  --surface-hover-color: hsl(220, 16%, 13%);
+  --surface-active-color: hsl(220, 16%, 16%);
   --shadow-color: hsla(0, 0%, 0%, 0.6);
-  --success-color: hsl(var(--hue), 75%, 60%);
-  --warning-color: hsl(42, 95%, 60%);
+  --success-color: hsl(var(--hue), 76%, 50%);
+  --warning-color: hsl(38, 96%, 54%);
   --danger-color: hsl(0, 75%, 60%);
 
   /*========== Typography ==========*/
@@ -90,7 +105,7 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 30px hsla(var(--hue), 75%, 60%, 0.15);
+  --shadow-glow: 0 0 30px var(--first-color-glow);
 
   /*========== Transitions ==========*/
   --transition-fast: 0.15s ease;
@@ -280,12 +295,12 @@ button {
   background-color: var(--first-color);
   color: var(--body-color);
   font-weight: var(--font-bold);
-  box-shadow: 0 4px 14px hsla(var(--hue), 75%, 60%, 0.25);
+  box-shadow: 0 4px 14px var(--first-color-glow);
 }
 
 .btn--primary:hover {
-  background-color: hsl(var(--hue), 75%, 66%);
-  box-shadow: 0 6px 20px hsla(var(--hue), 75%, 60%, 0.4);
+  background-color: hsl(var(--hue), 76%, 56%);
+  box-shadow: 0 6px 20px hsla(var(--hue), 76%, 50%, 0.45);
 }
 
 .btn--secondary {
@@ -296,7 +311,7 @@ button {
 
 .btn--secondary:hover {
   background-color: var(--surface-hover-color);
-  border-color: hsl(var(--hue), 8%, 28%);
+  border-color: hsl(220, 14%, 26%);
   color: var(--white-color);
 }
 
@@ -336,7 +351,7 @@ button {
 .badge--beta {
   background-color: var(--first-color-light);
   color: var(--first-color);
-  border: 1px solid hsla(var(--hue), 75%, 60%, 0.3);
+  border: 1px solid hsla(var(--hue), 76%, 50%, 0.3);
   text-transform: uppercase;
 }
 
@@ -349,7 +364,7 @@ button {
 }
 
 .badge--muted {
-  background-color: hsla(var(--hue), 8%, 20%, 0.4);
+  background-color: hsla(220, 16%, 16%, 0.5);
   color: var(--muted-color);
   border: 1px solid var(--border-color);
 }
@@ -364,7 +379,7 @@ button {
   width: 100%;
   height: var(--header-height);
   z-index: 100;
-  background-color: hsla(var(--hue), 12%, 4%, 0.75);
+  background-color: hsla(220, 20%, 5%, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -372,7 +387,7 @@ button {
 }
 
 .header.is-scrolled {
-  background-color: hsla(var(--hue), 12%, 4%, 0.92);
+  background-color: hsla(220, 20%, 5%, 0.94);
   border-bottom-color: var(--border-color);
   box-shadow: var(--shadow-sm);
 }
@@ -398,13 +413,21 @@ button {
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
 }
 
-.nav__logo-icon {
-  width: 28px;
-  height: 28px;
+.nav__logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px hsla(var(--hue), 76%, 50%, 0.25));
+  transition: transform var(--transition-normal), filter var(--transition-normal);
+}
+
+.nav__logo:hover .nav__logo-img {
+  transform: scale(1.08) rotate(5deg);
+  filter: drop-shadow(0 4px 14px hsla(var(--hue), 76%, 50%, 0.45));
 }
 
 .nav__menu {
@@ -573,12 +596,15 @@ button {
 .hero::before {
   content: "";
   position: absolute;
-  top: -150px;
+  top: -160px;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, hsla(var(--hue), 75%, 60%, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  width: min(92vw, 880px);
+  height: 650px;
+  background:
+    radial-gradient(ellipse at 30% 35%, hsla(210, 100%, 56%, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 30%, hsla(276, 88%, 60%, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 50% 55%, hsla(var(--hue), 76%, 50%, 0.12) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -675,7 +701,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1rem;
-  background-color: hsl(var(--hue), 8%, 10%);
+  background-color: var(--container-color);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -689,7 +715,7 @@ button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: hsl(var(--hue), 8%, 24%);
+  background-color: hsl(220, 14%, 20%);
 }
 
 .mockup-window__dot:nth-child(1) { background-color: #ef4444; }
@@ -703,7 +729,14 @@ button {
   color: var(--white-color);
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.5rem;
+}
+
+.mockup-window__icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .mockup-window__version {
@@ -723,7 +756,7 @@ button {
 }
 
 .mockup-bar {
-  background-color: hsl(var(--hue), 8%, 12%);
+  background-color: hsl(220, 16%, 12%);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 0.625rem 0.875rem;
@@ -782,7 +815,7 @@ button {
 
 .mockup-stream-item.is-selected {
   border-color: var(--first-color);
-  background-color: hsla(var(--hue), 75%, 60%, 0.05);
+  background-color: var(--first-color-subtle);
 }
 
 .mockup-stream-info {
@@ -796,7 +829,7 @@ button {
   font-weight: var(--font-bold);
   font-size: var(--small-font-size);
   color: var(--white-color);
-  background-color: hsl(var(--hue), 8%, 18%);
+  background-color: hsl(220, 16%, 15%);
   padding: 2px 6px;
   border-radius: var(--radius-sm);
 }
@@ -834,20 +867,20 @@ button {
 .mockup-status-badge--ready {
   color: var(--first-color);
   background-color: var(--first-color-light);
-  border: 1px solid hsla(var(--hue), 75%, 60%, 0.2);
+  border: 1px solid hsla(var(--hue), 76%, 50%, 0.2);
 }
 
 .mockup-status-badge--muxing {
   color: var(--warning-color);
-  background-color: hsla(42, 95%, 60%, 0.12);
-  border: 1px solid hsla(42, 95%, 60%, 0.25);
+  background-color: hsla(38, 96%, 54%, 0.12);
+  border: 1px solid hsla(38, 96%, 54%, 0.25);
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
 .mockup-progress-box {
-  background-color: hsl(var(--hue), 8%, 12%);
+  background-color: hsl(220, 16%, 12%);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 0.75rem;
@@ -877,7 +910,7 @@ button {
 .mockup-progress-track {
   width: 100%;
   height: 6px;
-  background-color: hsl(var(--hue), 8%, 20%);
+  background-color: hsl(220, 14%, 18%);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -913,7 +946,7 @@ button {
 }
 
 .mockup-btn--secondary {
-  background-color: hsl(var(--hue), 8%, 16%);
+  background-color: hsl(220, 16%, 14%);
   color: var(--text-color-light);
   border: 1px solid var(--border-color);
 }
@@ -953,7 +986,7 @@ button {
 
 .feature-card:hover {
   transform: translateY(-3px);
-  border-color: hsla(var(--hue), 75%, 60%, 0.4);
+  border-color: hsla(var(--hue), 76%, 50%, 0.4);
   box-shadow: var(--shadow-md);
 }
 
@@ -962,7 +995,7 @@ button {
   height: 44px;
   border-radius: var(--radius-md);
   background-color: var(--first-color-light);
-  border: 1px solid hsla(var(--hue), 75%, 60%, 0.2);
+  border: 1px solid hsla(var(--hue), 76%, 50%, 0.2);
   color: var(--first-color);
   display: flex;
   align-items: center;
@@ -1023,7 +1056,7 @@ button {
 
 .workflow-card:hover {
   transform: translateY(-3px);
-  border-color: hsla(var(--hue), 75%, 60%, 0.35);
+  border-color: hsla(var(--hue), 76%, 50%, 0.35);
 }
 
 .workflow-card__step {
@@ -1041,7 +1074,7 @@ button {
   content: "";
   height: 1px;
   flex: 1;
-  background: linear-gradient(90deg, hsla(var(--hue), 75%, 60%, 0.4), transparent);
+  background: linear-gradient(90deg, hsla(var(--hue), 76%, 50%, 0.4), transparent);
 }
 
 .workflow-card__title {
@@ -1059,7 +1092,7 @@ button {
    10. Open Beta Section
    ========================================================================== */
 .beta__card {
-  background: linear-gradient(180deg, hsl(var(--hue), 8%, 12%) 0%, var(--container-color) 100%);
+  background: linear-gradient(180deg, hsl(220, 16%, 12%) 0%, var(--container-color) 100%);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   padding: var(--space-6) var(--space-5);
@@ -1143,7 +1176,7 @@ button {
 
 .browser-card:hover {
   transform: translateY(-3px);
-  border-color: hsla(var(--hue), 75%, 60%, 0.35);
+  border-color: hsla(var(--hue), 76%, 50%, 0.35);
 }
 
 .browser-card__header {
@@ -1156,7 +1189,7 @@ button {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
-  background-color: hsl(var(--hue), 8%, 14%);
+  background-color: hsl(220, 16%, 13%);
   border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -1217,7 +1250,7 @@ button {
 
 .feedback-card:hover {
   transform: translateY(-3px);
-  border-color: hsla(var(--hue), 75%, 60%, 0.4);
+  border-color: hsla(var(--hue), 76%, 50%, 0.4);
   box-shadow: var(--shadow-md);
 }
 
@@ -1267,11 +1300,11 @@ button {
 }
 
 .faq__item:hover {
-  border-color: hsla(var(--hue), 8%, 30%, 1);
+  border-color: hsl(220, 14%, 26%);
 }
 
 .faq__item[open] {
-  border-color: hsla(var(--hue), 75%, 60%, 0.35);
+  border-color: hsla(var(--hue), 76%, 50%, 0.35);
 }
 
 .faq__summary {
@@ -1364,7 +1397,15 @@ button {
   margin-bottom: var(--space-1);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
+}
+
+.footer__logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px hsla(var(--hue), 76%, 50%, 0.25));
 }
 
 .footer__subtitle {
@@ -1398,7 +1439,7 @@ button {
   flex-direction: column;
   gap: var(--space-2);
   padding-top: var(--space-5);
-  border-top: 1px solid hsla(var(--hue), 8%, 20%, 0.5);
+  border-top: 1px solid hsla(220, 14%, 20%, 0.6);
   font-size: var(--smaller-font-size);
   color: var(--muted-color);
 }
